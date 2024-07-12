@@ -1,18 +1,14 @@
-let btns = document.querySelectorAll('.tour-button');
+import data from "../data/data.json";
 
+let btns = document.querySelectorAll(".tour-button");
 
 function getData() {
-  fetch('https://run.mocky.io/v3/7ae64052-c659-4c35-b6af-f46601a202a5')
-.then(function(response){
-return response.json()
-})
-.then(function(data){
-  
-  btns.forEach(element => {
-    element.addEventListener('click',function(el){
-        document.querySelector('body').innerHTML = 
-        `
-        <header class="header" style="background-image:url(./img/slider/${data[el.target.id].cover})">
+  btns.forEach((element) => {
+    element.addEventListener("click", function (el) {
+      document.querySelector("body").innerHTML = `
+        <header class="header" style="background-image:url(./img/slider/${
+          data[el.target.id].cover
+        })">
         <div class="nav-bar">
           <div class="logo">
             <a href="../index.html">
@@ -262,14 +258,11 @@ return response.json()
             </div>
           </div>
         </div>
-        `
-      }
-    )})}
-)
+        `;
+    });
+  });
 }
 
+AOS.init();
 
-
-  AOS.init();
-
-  getData();
+getData();
