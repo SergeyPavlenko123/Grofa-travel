@@ -826,6 +826,7 @@ a {
 }
 
 .tour-photo img {
+  border-radius: 0 130px;
   width: 100%;
 }
 
